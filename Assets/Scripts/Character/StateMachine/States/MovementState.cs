@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovementState : IState
@@ -19,7 +15,8 @@ public class MovementState : IState
     }
 
     protected PlayerInput Input => _character.Input;
-    protected CharacterController CharacterController => _character.Controller;
+    //protected CharacterController CharacterController => _character.Controller;
+    protected Rigidbody2D Rigidbody => _character.Rigidbody;
     protected CharacterView View => _character.View;
 
     private Quaternion TurnRight => new Quaternion(0, 0, 0, 0);
@@ -50,7 +47,8 @@ public class MovementState : IState
     {
         Vector3 velocity = GetConvertedVelocity();
 
-        CharacterController.Move(velocity * Time.deltaTime);
+        //CharacterController.Move(velocity * Time.deltaTime);
+        Rigidbody.velocity = velocity;
         _character.transform.rotation = GetRotationFrom(velocity);
     }
 

@@ -13,5 +13,5 @@ public class AirborneStateConfig
     public JumpingStateConfig JumpingStateConfig => _jumpingStateConfig;
     public float Speed => _speed;
 
-    public float BaseGravity => 2f * _jumpingStateConfig.MaxHeight / (_jumpingStateConfig.TimeToReachMaxHeight * _jumpingStateConfig.TimeToReachMaxHeight);
+    //public float BaseGravity => 2f * _jumpingStateConfig.MaxHeight / (_jumpingStateConfig.TimeToReachMaxHeight * _jumpingStateConfig.TimeToReachMaxHeight);
 }

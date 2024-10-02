@@ -30,8 +30,8 @@ public class AirBorneState : MovementState
     {
         base.Update();
 
-        Data.YVelocity -= GetGravityMultipliyer() * Time.deltaTime;
+        //Data.YVelocity -= GetGravityMultipliyer() * Time.deltaTime;
     }
 
-    protected virtual float GetGravityMultipliyer() => _config.BaseGravity;
+    //protected virtual float GetGravityMultipliyer() => _config.BaseGravity;
 }

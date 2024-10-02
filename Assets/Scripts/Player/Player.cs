@@ -3,10 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
-[RequireComponent(typeof(Animator))]
-
 
 public class Player : MonoBehaviour
 {
@@ -21,5 +17,13 @@ public class Player : MonoBehaviour
     {
         LifeCount -= damage;
         Debug.Log(LifeCount);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out Coin coin))
+        {
+            Debug.Log("trrgr");
+        }
     }
 }

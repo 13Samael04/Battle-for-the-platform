@@ -7,10 +7,12 @@ using UnityEngine;
 
 public class JumpingStateConfig
 {
-    [SerializeField, Range(0, 10)] private float _maxHeight;
+    /*[SerializeField, Range(0, 10)] private float _maxHeight;
     [SerializeField, Range(0, 10)] public float _timeToReachMaxHeight;
 
     public float StartYVelocity => _maxHeight / _timeToReachMaxHeight;
     public float MaxHeight => _maxHeight;
-    public float TimeToReachMaxHeight => _timeToReachMaxHeight;
+    public float TimeToReachMaxHeight => _timeToReachMaxHeight;*/
+    [SerializeField, Range(0, 10)] private float _maxForceJump;
+    public float MaxForceJump => _maxForceJump;
 }
