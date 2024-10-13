@@ -31,6 +31,7 @@ public class Character : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _input = new PlayerInput();
         _stateMachine = new CharacterStateMachine(this);
+        _rigidbody.freezeRotation = true;
     }
 
     private void Update()

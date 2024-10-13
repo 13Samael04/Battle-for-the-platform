@@ -24,7 +24,7 @@ public class MovementState : IState
 
     public virtual void Enter()
     {
-        Debug.Log(GetType());
+        //Debug.Log(GetType());
 
         View.StartMovement();
         AddInputActionsCallbacks();
@@ -49,6 +49,7 @@ public class MovementState : IState
 
         //CharacterController.Move(velocity * Time.deltaTime);
         Rigidbody.velocity = velocity;
+
         _character.transform.rotation = GetRotationFrom(velocity);
     }
 
@@ -72,7 +73,7 @@ public class MovementState : IState
         return _character.transform.rotation;
     }
 
-    private Vector3 GetConvertedVelocity() => new Vector3(Data.XVelocity, Data.YVelocity, 0);
+    private Vector3 GetConvertedVelocity() => new Vector3(Data.XVelocity, Rigidbody.velocity.y, 0);
 
     private float ReadHorizontalInput() => Input.Movement.Move.ReadValue<float>();
 }

@@ -31,7 +31,7 @@ public class FallingState : AirBorneState
 
         if (_groundChecker.IsTouch)
         {
-            Data.YVelocity = 0;
+            //Data.YVelocity = 0;
 
             if (IsHorizontalInputZero())
             {
